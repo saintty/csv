@@ -22,14 +22,6 @@ jobs:
       NEXT_PUBLIC_SITE_URL: ${{ vars.NEXT_PUBLIC_SITE_URL }}
 
     steps:
-      - name: Check environment
-        run: |
-          if [ -z "$NEXT_PUBLIC_SITE_URL" ]; then
-            echo "NEXT_PUBLIC_SITE_URL is EMPTY"
-            exit 1
-          fi
-          echo "NEXT_PUBLIC_SITE_URL is configured"
-
       - name: Checkout
         uses: actions/checkout@v4
 
@@ -41,7 +33,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 26
+          node-version: 22
           cache: pnpm
 
       - name: Install dependencies
