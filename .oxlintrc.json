@@ -1,0 +1,48 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "ignorePatterns": [".next/**", "node_modules/**"],
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "plugins": [
+    "unicorn",
+    "typescript",
+    "import",
+    "jsx-a11y",
+    "nextjs",
+    "react",
+    "import"
+  ],
+  "rules": {
+    "no-console": "off",
+    "require-await": "error",
+    "no-duplicate-imports": "error",
+    "react/react-in-jsx-scope": "off",
+    "arrow-body-style": ["error", "as-needed"],
+    "react/jsx-fragments": ["error", "syntax"],
+    "react/jsx-curly-brace-presence": "error",
+    "react/jsx-key": "error",
+    "import/no-cycle": "warn",
+    "no-control-regex": "off",
+    "@typescript-eslint/no-unused-vars": "warn",
+    "typescript/no-explicit-any": "error",
+    "@typescript-eslint/ban-ts-comment": "off",
+    "@typescript-eslint/no-var-requires": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/no-duplicate-enum-values": "off",
+    "@typescript-eslint/consistent-type-imports": "error",
+    "react/self-closing-comp": ["error", { "component": true, "html": true }],
+    "jsx-a11y/prefer-tag-over-role": "off",
+    "jsx-a11y/media-has-caption": "off"
+  },
+  "overrides": [
+    {
+      "files": ["**/*.tsx"],
+      "rules": {
+        "no-console": "error"
+      }
+    }
+  ]
+}

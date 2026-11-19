@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@theme {
+  /* Primary */
+  --color-primary: #8b5cf6;
+  --color-primary-hover: #7c3aed;
+  --color-primary-muted: #6d28d9;
+
+  /* Background */
+  --color-background: #0b0f17;
+  --color-surface: #111827;
+  --color-surface-hover: #1a2435;
+  --color-surface-elevated: #202b3d;
+
+  /* Neutral */
+  --color-neutral: #263244;
+  --color-neutral-hover: #334155;
+
+  /* Text */
+  --color-foreground: #f1f5f9;
+  --color-muted: #94a3b8;
+  --color-subtle: #64748b;
+
+  /* Borders */
+  --color-border: #263244;
+  --color-border-hover: #475569;
+
+  /* Accent */
+  --color-accent: #22d3ee;
+
+  /* Status */
+  --color-success: #34d399;
+  --color-warning: #fbbf24;
+  --color-danger: #fb7185;
+
+  /* Typography */
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  button {
+    @apply cursor-pointer;
+  }
+
+  ::selection {
+    @apply bg-primary/30 text-foreground;
+  }
+
+  [data-reveal="true"] {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
