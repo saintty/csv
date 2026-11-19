@@ -27,7 +27,7 @@ export const Header = () => {
   return (
     <header
       ref={headerRef}
-      className="sticky top-0 z-50 border-b border-border bg-background/90 -blur-xl"
+      className="sticky top-0 z-50 border-b border-border bg-background "
     >
       <Container>
         <div className="flex h-16 items-center justify-between">
