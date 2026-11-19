@@ -4,8 +4,6 @@ import { Code2 } from "lucide-react";
 
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
-import { cn } from "@/shared/utils/cn";
-
 import { Card } from "@/shared/ui/card/card";
 import { Section } from "@/shared/ui/section/section";
 import { Heading } from "@/shared/ui/heading/heading";
@@ -54,16 +52,8 @@ export const About = () => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 self-start">
-          {data.about.cards.map(({ description, title }, idx) => (
-            <Card
-              key={title}
-              data-reveal-card
-              className={cn("lg:max-w-60", {
-                "sm:col-span-2 sm:mx-auto":
-                  idx === data.about.cards.length - 1 &&
-                  data.about.cards.length % 2,
-              })}
-            >
+          {data.about.cards.map(({ description, title }) => (
+            <Card key={title} data-reveal-card className="lg:max-w-60">
               <Code2 className="mb-4 text-primary" size={24} />
               <p className="text-2xl font-bold text-foreground">{title}</p>
               <p className="mt-2 text-sm leading-6 text-muted">{description}</p>
